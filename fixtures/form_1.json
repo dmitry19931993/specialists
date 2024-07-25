@@ -1,0 +1,145 @@
+[
+  {
+    "model": "young_specialist.youngspecialistindicators",
+    "pk": 4,
+    "fields": {
+      "article_name": "Общая численность молодых специалистов(рабочих)",
+      "relevant_until": "2024-09-01",
+      "order": 1,
+      "last_modified": "2024-07-24T13:55:47.377Z",
+      "modified_by": 1
+    }
+  },
+  {
+    "model": "young_specialist.youngspecialistindicators",
+    "pk": 5,
+    "fields": {
+      "article_name": "Направлен комиссией на основании",
+      "relevant_until": "2024-10-01",
+      "order": 2,
+      "last_modified": "2024-07-24T13:56:45.985Z",
+      "modified_by": 3
+    }
+  },
+  {
+    "model": "young_specialist.youngspecialistindicators",
+    "pk": 6,
+    "fields": {
+      "article_name": "Количество уволенных молодых специалистов (рабочих)",
+      "relevant_until": "2024-12-01",
+      "order": 3,
+      "last_modified": "2024-07-24T13:58:10.391Z",
+      "modified_by": 2
+    }
+  },
+  {
+    "model": "young_specialist.youngspecialistindicators",
+    "pk": 7,
+    "fields": {
+      "article_name": "Истечение срока обязательной отработки",
+      "relevant_until": "2024-09-01",
+      "order": 4,
+      "last_modified": "2024-07-24T13:58:49.472Z",
+      "modified_by": 1
+    }
+  },
+  {
+    "model": "young_specialist.youngspecialistindicators",
+    "pk": 8,
+    "fields": {
+      "article_name": "Призыв на срочную службу",
+      "relevant_until": "2024-10-01",
+      "order": 5,
+      "last_modified": "2024-07-24T13:59:38.279Z",
+      "modified_by": 3
+    }
+  },
+  {
+    "model": "young_specialist.youngspecialistindicators",
+    "pk": 9,
+    "fields": {
+      "article_name": "Поступления в учреждения образования",
+      "relevant_until": "2024-12-01",
+      "order": 6,
+      "last_modified": "2024-07-24T14:00:23.490Z",
+      "modified_by": 2
+    }
+  },
+  {
+    "model": "young_specialist.youngspecialistindicators",
+    "pk": 10,
+    "fields": {
+      "article_name": "Переезд в другую местность",
+      "relevant_until": "2024-09-01",
+      "order": 7,
+      "last_modified": "2024-07-24T14:00:51.852Z",
+      "modified_by": 1
+    }
+  },
+  {
+    "model": "young_specialist.youngspecialistindicators",
+    "pk": 11,
+    "fields": {
+      "article_name": "Дискредитирующие обстоятельства",
+      "relevant_until": "2024-10-01",
+      "order": 8,
+      "last_modified": "2024-07-24T14:01:25.738Z",
+      "modified_by": 2
+    }
+  },
+  {
+    "model": "young_specialist.youngspecialistindicators",
+    "pk": 12,
+    "fields": {
+      "article_name": "Отсутствие жилья",
+      "relevant_until": "2024-12-01",
+      "order": 9,
+      "last_modified": "2024-07-24T14:02:09.597Z",
+      "modified_by": 3
+    }
+  },
+  {
+    "model": "young_specialist.youngspecialistindicators",
+    "pk": 13,
+    "fields": {
+      "article_name": "Неудовлетворенность выбранной профессией или специальностью",
+      "relevant_until": "2024-09-01",
+      "order": 10,
+      "last_modified": "2024-07-24T14:03:03.790Z",
+      "modified_by": 1
+    }
+  },
+  {
+    "model": "young_specialist.youngspecialistindicators",
+    "pk": 14,
+    "fields": {
+      "article_name": "Неудовлетворенность заработной платы",
+      "relevant_until": "2024-12-01",
+      "order": 11,
+      "last_modified": "2024-07-24T14:06:02.629Z",
+      "modified_by": 3
+    }
+  },
+  {
+    "model": "young_specialist.youngspecialistindicators",
+    "pk": 15,
+    "fields": {
+      "article_name": "Проблемы адаптации личности на рабочем месте",
+      "relevant_until": "2024-09-01",
+      "order": 12,
+      "last_modified": "2024-07-24T14:06:51.792Z",
+      "modified_by": 3
+    }
+  },
+  {
+    "model": "young_specialist.youngspecialistindicators",
+    "pk": 16,
+    "fields": {
+      "article_name": "Иные причины",
+      "relevant_until": "2024-12-01",
+      "order": 13,
+      "last_modified": "2024-07-24T14:07:11.233Z",
+      "modified_by": 2
+    }
+  }
+]

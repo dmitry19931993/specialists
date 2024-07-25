@@ -1,0 +1,23 @@
+[
+  {
+    "model": "young_specialist.organization",
+    "pk": 1,
+    "fields": {
+      "name": "ITOverone"
+    }
+  },
+  {
+    "model": "young_specialist.organization",
+    "pk": 2,
+    "fields": {
+      "name": "Skillbox"
+    }
+  },
+  {
+    "model": "young_specialist.organization",
+    "pk": 3,
+    "fields": {
+      "name": "Opel"
+    }
+  }
+]
