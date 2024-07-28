@@ -5,7 +5,7 @@ from .models import YoungSpecialistIndicators, YoungSpecialistsView
 import io
 from django.http import HttpResponse
 
-def table(start_month_obj, end_month_obj, organization_list, article_list):
+def table(start_month_obj, end_month_obj, organization_list, article_list, monthly_records):
     month_list = [
         'ЯНВАРЬ', 'ФЕВАРАЛЬ', 'МАРТ',
         'АПРЕЛЬ', 'МАЙ', 'ИЮНЬ', 'ИЮЛЬ',
@@ -104,7 +104,7 @@ def table(start_month_obj, end_month_obj, organization_list, article_list):
 
     for organization in organization_list:
         worksheet.write(f'A{7 + organization_list.index(organization)}', f'{organization}', bold_format)
-        yong_specialists = YoungSpecialistsView.objects.filter(name=organization)
+        yong_specialists = monthly_records.filter(name=organization)
         worksheet.write(
             f'B{7 + organization_list.index(organization)}',
             yong_specialists[0].target_distribution_count + yong_specialists[0].distribution_count, header_format
@@ -318,4 +318,4 @@ def data_filter(start_month, end_month):
         article_list.append(article.article_name)
     for organization in monthly_records.values('name').distinct():
          organization_list.append(organization['name'])
-    return table(start_month_obj, end_month_obj, organization_list, article_list)
+    return table(start_month_obj, end_month_obj, organization_list, article_list, monthly_records)
