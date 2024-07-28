@@ -1,12 +1,11 @@
 import xlsxwriter
 import datetime
-from django.db.models import Q
 from datetime import date
-from .models import YoungSpecialistIndicators, MonthlyFormHeader, MonthlyFormLine
+from .models import YoungSpecialistIndicators, YoungSpecialistsView
 import io
 from django.http import HttpResponse
 
-def table(start_month_obj, end_month_obj, article_list, organization_list):
+def table(start_month_obj, end_month_obj, organization_list, article_list):
     month_list = [
         'ЯНВАРЬ', 'ФЕВАРАЛЬ', 'МАРТ',
         'АПРЕЛЬ', 'МАЙ', 'ИЮНЬ', 'ИЮЛЬ',
@@ -105,7 +104,7 @@ def table(start_month_obj, end_month_obj, article_list, organization_list):
 
     for organization in organization_list:
         worksheet.write(f'A{7 + organization_list.index(organization)}', f'{organization}', bold_format)
-        yong_specialists = MonthlyFormLine.objects.filter(header__organization__name=organization)
+        yong_specialists = YoungSpecialistsView.objects.filter(name=organization)
         worksheet.write(
             f'B{7 + organization_list.index(organization)}',
             yong_specialists[0].target_distribution_count + yong_specialists[0].distribution_count, header_format
@@ -300,7 +299,7 @@ def table(start_month_obj, end_month_obj, article_list, organization_list):
     output.seek(0)
 
     response = HttpResponse(output, content_type='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
-    response['Content-Disposition'] = f'attachment; filename="Young spcialists.xlsx"'
+    response['Content-Disposition'] = f'attachment; filename="Young specialists.xlsx"'
     return response
 
 def data_filter(start_month, end_month):
@@ -311,13 +310,12 @@ def data_filter(start_month, end_month):
     start_date = date(start_month_obj.year, start_month_obj.month, 1)
     end_date = date(end_month_obj.year, end_month_obj.month + 1, 1)\
         if end_month_obj.month < 12 else date(end_month_obj.year + 1, 1, 1)
-    monthly_records = MonthlyFormHeader.objects.filter(
-        Q(start_date__lt=start_date) & Q(end_date__gt=end_date)
+    monthly_records = YoungSpecialistsView.objects.filter(
+        start_date__lt=start_date, end_date__gt=end_date
     )
     articles = YoungSpecialistIndicators.objects.all()
     for article in articles:
         article_list.append(article.article_name)
-    for organization in monthly_records:
-        organization_list.append(organization.organization.name)
-
-    return table(start_month_obj, end_month_obj, article_list, organization_list)
+    for organization in monthly_records.values('name').distinct():
+         organization_list.append(organization['name'])
+    return table(start_month_obj, end_month_obj, organization_list, article_list)
