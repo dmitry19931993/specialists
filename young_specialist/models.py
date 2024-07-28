@@ -61,3 +61,16 @@ class MonthlyFormLine(models.Model):
 
     def __str__(self):
         return f"{self.header} - {self.indicator}"
+
+
+class YoungSpecialistsView(models.Model):
+    name = models.CharField(max_length=255)
+    article_name = models.CharField(max_length=255)
+    target_distribution_count = models.IntegerField()
+    distribution_count = models.IntegerField()
+    start_date = models.DateField()
+    end_date = models.DateField()
+
+    class Meta:
+        managed = False
+        db_table = 'young_specialists_view'
